@@ -41,6 +41,9 @@ export default function AboutMe() {
                     }
                 </div>
             </div>
+            <div>
+                <h1 className='section-header'>What I've Been Working On</h1>
+            </div>
         </div>
     );
 }
