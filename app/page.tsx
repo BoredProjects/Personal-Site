@@ -2,6 +2,7 @@
 import "./stylesheets/page.css";
 import { useEffect, useRef } from "react";
 import BodyContent from "./comps/BodyContent";
+import palms from './images/palms.jpg'
 
 export default function Home() {
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -92,7 +93,13 @@ export default function Home() {
 
   return (
     <div ref={bodyRef} className="page-container">
-      <div className="main-header" />
+      <div className="main-header" >
+          <img
+            src="/palms.jpg"
+            alt="Logo"
+            className="header-logo"
+          />
+      </div>
       <div className="main-body">
         <BodyContent />
       </div>
