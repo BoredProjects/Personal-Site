@@ -1,0 +1,54 @@
+.section-header{
+    text-align: center;
+    padding-top: 5%;
+    font-family: 'Inter',sans-serif;
+}
+
+.section-container{
+    padding-top: 2%;
+}
+
+.section-para{
+    text-align: center;
+    font-family: 'Inter',sans-serif;
+    width: 50%;
+    margin: 0 auto;
+    font-size: larger;
+}
+
+.section-skill-container{
+    display: inline-flex; /* keeps it inline with others */
+    flex-direction: column; /* stack header above list */
+    align-items: center; /* center content horizontally */
+    width: 33%; /* 3 columns */
+    vertical-align: top; /* ensures all columns start at top */
+}
+
+.section-skill-container-bg{
+    display: inline-flex; /* keeps it inline with others */
+    flex-direction: column; /* stack header above list */
+    align-items: center; /* center content horizontally */
+    width: 90%; /* 10% smaller than parent */
+    height: 70%;
+    margin: 0 auto; /* centers it within the parent container */
+    transition: background-color 0.3s, transform 0.2s; /* smooth hover effect */
+    background-color: rgba(60,110,113,0.2); /* example highlight */
+    border-radius: 12px;
+}   
+
+.section-skill-header{
+    font-family: 'Inter',sans-serif;
+    padding-top: 10%;
+    margin-top: 0;
+    text-align: center;
+    font-size: x-large;
+}
+
+.section-skill-item{
+    font-family: 'Inter',sans-serif;
+    width: auto; /* let li size naturally */
+}
+
+ul{
+    list-style-type: disc;
+}
