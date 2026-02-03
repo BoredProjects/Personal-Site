@@ -1,0 +1,12 @@
+html, body, div {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.screen-container{
+    background-color: transparent;
+    width: 50%;
+    box-shadow: 8px 0 10px -6px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+}

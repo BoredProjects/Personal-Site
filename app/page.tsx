@@ -1,12 +1,19 @@
 "use client";
 import "./stylesheets/page.css";
-import { useEffect, useRef } from "react";
-import BodyContent from "./comps/BodyContent";
-import palms from './images/palms.jpg'
+import { useEffect, useRef, useState } from "react";
+import Screen from './comps/Screen';
+import Directory from './comps/Directory';
+import PageContent from "./comps/PageContent";
+
+interface Section {
+  title: string;
+  desc: string;
+}
 
 export default function Home() {
   const bodyRef = useRef<HTMLDivElement>(null);
   const mousePos = useRef({ x: 50, y: 50 });
+  const [section, setSection] = useState<Section | null>(null);
 
   const ripple = useRef({
     active: false,
@@ -17,6 +24,14 @@ export default function Home() {
   const defaultColor = "rgba(128,94,115, .2)";
   const rippleColor = "128, 94, 115";
   const backgroundColor = "white";
+
+  const updateSelection = (content: Section) => {
+    setSection(content);
+  }
+
+  useEffect(()=>{
+    console.log(section)
+  },[section])
 
   useEffect(() => {
     const container = bodyRef.current;
@@ -93,15 +108,18 @@ export default function Home() {
 
   return (
     <div ref={bodyRef} className="page-container">
-      <div className="main-header" >
-          <img
-            src="/palms.jpg"
-            alt="Logo"
-            className="header-logo"
-          />
-      </div>
       <div className="main-body">
-        <BodyContent />
+        {/* Use JSX syntax with Screen as a wrapper */}
+        <Screen>
+          <Directory updateSelection={updateSelection} />
+        </Screen>
+        <Screen>
+          {section ? (
+            <PageContent title={section.title} desc={section.desc} />
+          ) : (
+            <PageContent title="Select a section" desc="Please choose a section from the menu." />
+          )}
+        </Screen>
       </div>
     </div>
   );
