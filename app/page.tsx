@@ -13,7 +13,7 @@ interface Section {
 export default function Home() {
   const bodyRef = useRef<HTMLDivElement>(null);
   const mousePos = useRef({ x: 50, y: 50 });
-  const [section, setSection] = useState<Section | null>(null);
+  const [section, setSection] = useState<Section | null>({ title: 'About Me', desc:"In my free time, you can often find me either planning my next outdoor adventure or playing games with friends. Some of my recent trips include exploring the Garden of the Gods in Colorado, which was an unforgettable experience. I also like to set aside time to practice new technologies that can make my day-to-day life easier. When I’m relaxing at home, I enjoy diving into games like Kenshi and Hearts of Iron, which let me relax or sometimes mod them for custom adventures." });
 
   const ripple = useRef({
     active: false,
@@ -109,9 +109,8 @@ export default function Home() {
   return (
     <div ref={bodyRef} className="page-container">
       <div className="main-body">
-        {/* Use JSX syntax with Screen as a wrapper */}
         <Screen>
-          <Directory updateSelection={updateSelection} />
+          <Directory updateSelection={updateSelection}/>
         </Screen>
         <Screen>
           {section ? (

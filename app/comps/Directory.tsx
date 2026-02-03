@@ -1,11 +1,9 @@
 import '../stylesheets/directory.css';
 
-// Props interface
 interface DirectoryProps {
-  updateSelection: (section: Section) => void; // now passes the whole object
+  updateSelection: (section: Section) => void;
 }
 
-// Section object type
 interface Section {
   title: string;
   desc: string;
@@ -22,23 +20,21 @@ export default function Directory({ updateSelection }: DirectoryProps) {
   return (
     <div className='directory-container'>
       <div className='sections-container'>
-        <div className='chatbot-container'>
-          {/* Optional chatbot content */}
-        </div>
-
         <div className='content-list-container'>
           <ul className='content-list'>
             {sections.map((section, index) => (
               <li key={index} className='content-item'>
                 <button
                   className='page-button'
-                  onClick={() => updateSelection(section)} // pass the object
+                  onClick={() => updateSelection(section)}
                 >
                   {section.title}
                 </button>
               </li>
             ))}
           </ul>
+        </div>
+        <div className='chatbot-container'>
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import '../stylesheets/pageContent.css';
+import { motion } from 'framer-motion';
 
 interface PageContentProps {
   title: string;
-  desc: string; // required now
+  desc: string;
 }
 
 export default function PageContent({ title, desc }: PageContentProps) {
@@ -14,7 +15,14 @@ export default function PageContent({ title, desc }: PageContentProps) {
         </div>
         <div className='page-body-container'>
           <div className='page-body-content' style={{ whiteSpace: 'pre-line' }}>
-            <p className='page-body-desc'>{desc}</p>
+            <motion.p
+              key={title}
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 1}}
+            >
+              {desc}
+            </motion.p>
           </div>
         </div>
       </div>
