@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Screen from "./comps/Screen";
 import Directory from "./comps/Directory";
 import PageContent from "./comps/PageContent";
+import ProjectCarousel from "./comps/ProjectCarousal";
 
 interface Section {
   title: string;
@@ -136,7 +137,9 @@ export default function Home() {
           />
         </Screen>
         <Screen>
-          {section ? (
+          {section?.desc === "__projects__" ? (
+            <ProjectCarousel />
+          ) : section ? (
             <PageContent title={section.title} desc={section.desc} />
           ) : (
             <PageContent
