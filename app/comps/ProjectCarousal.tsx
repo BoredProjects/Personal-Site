@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     link: 'https://marketplace-production-7e33.up.railway.app/dashboard'
   },{
     title: "Prospect Miner",
-    desc: "Pulls companies in an area that do not currently have a website.",
+    desc: "Pulls companies in an area that do not currently have a website. On the way!",
     image: "",
     link: ""
   }
