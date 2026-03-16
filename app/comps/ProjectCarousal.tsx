@@ -19,9 +19,9 @@ const PROJECTS: Project[] = [
     link: "https://fe-hotel-technical-analysis-production.up.railway.app/",
   },{
     title: "Market Place",
-    desc: "In progress",
-    image: '',
-    link: ''
+    desc: "A full stack marketplace MVP built with Next.js and Express. Features a customer facing shop with cart and multi-step checkout, and an admin back-office with inventory management, vendor CRM, order tracking, and a guided tooltip tour. ",
+    image: '/market-place.png',
+    link: 'marketplace-production-7e33.up.railway.app'
   }
 ];
 // ────────────────────────────────────────────────────────────────────────────
