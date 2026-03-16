@@ -21,7 +21,7 @@ const PROJECTS: Project[] = [
     title: "Market Place",
     desc: "A full stack marketplace MVP built with Next.js and Express. Features a customer facing shop with cart and multi-step checkout, and an admin back-office with inventory management, vendor CRM, order tracking, and a guided tooltip tour. ",
     image: '/market-place.png',
-    link: 'https://marketplace-production-7e33.up.railway.app/dashboard'
+    link: 'https://marketplace-production-7e33.up.railway.app/'
   },{
     title: "Prospect Miner",
     desc: "Pulls companies in an area that do not currently have a website. On the way!",
