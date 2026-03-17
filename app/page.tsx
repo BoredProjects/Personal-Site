@@ -5,6 +5,7 @@ import Screen from "./comps/Screen";
 import Directory from "./comps/Directory";
 import PageContent from "./comps/PageContent";
 import ProjectCarousel from "./comps/ProjectCarousal";
+import ResumeViewer from "./comps/ResumeViewer";
 
 interface Section {
   title: string;
@@ -18,7 +19,7 @@ export default function Home() {
   const [section, setSection] = useState<Section | null>({
     title: "About Me",
     desc:
-      "In my free time, you can often find me either planning my next outdoor adventure or playing games with friends. Some of my recent trips include exploring the Garden of the Gods in Colorado, which was an unforgettable experience. I also like to set aside time to practice new technologies that can make my day-to-day life easier. When I’m relaxing at home, I enjoy diving into games like Kenshi and Hearts of Iron, which let me relax or sometimes mod them for custom adventures.",
+      "In my free time, you can often find me either planning my next outdoor adventure or playing games with friends. Some of my recent trips include exploring the Garden of the Gods in Colorado, which was an unforgettable experience. I also like to set aside time to practice new technologies that can make my day-to-day life easier. When I'm relaxing at home, I enjoy diving into games like Kenshi and Hearts of Iron, which let me relax or sometimes mod them for custom adventures.",
   });
 
   const ripple = useRef({
@@ -34,10 +35,9 @@ export default function Home() {
     setSection(content);
   };
 
-  // Helper to extract "r,g,b" from rgb or rgba
   const getRGB = (color: string) => {
     const match = color.match(/\d+/g);
-    if (!match) return "128,94,115"; // fallback
+    if (!match) return "128,94,115";
     return `${match[0]}, ${match[1]}, ${match[2]}`;
   };
 
@@ -139,6 +139,8 @@ export default function Home() {
         <Screen>
           {section?.desc === "__projects__" ? (
             <ProjectCarousel />
+          ) : section?.desc === "__resume__" ? (
+            <ResumeViewer />
           ) : section ? (
             <PageContent title={section.title} desc={section.desc} />
           ) : (
